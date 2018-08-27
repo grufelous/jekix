@@ -19,10 +19,13 @@
       <h3>
         <a class="post-link" href="{{ post.url | relative_url }}">
           {{ post.title | escape }}
+
         </a>
       </h3>
       <p>
+
         {{post.content | strip_html | truncatewords:50}}<span class="post-meta">{{ post.date | date: date_format }}</span>
+        {{ post.content | number_of_words | divided_by: 200.0 }}minutes
       </p>
     </li>
     {%- endfor -%}
